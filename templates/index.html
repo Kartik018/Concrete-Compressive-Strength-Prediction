@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Concrete compressive strength prediction</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+                header {
+        background-color: #00264d;
+        padding: 1px;
+        text-align: center;
+        font-size: 25px;
+        color: white;
+    }
+    
+    footer {
+        background-color: #00264d;
+        padding: 2px;
+        text-align: center;
+        color: white;
+    }
+    
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+    
+    input[type=text],
+    select,
+    textarea {
+        width: 75%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+    
+    label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+        color: white;
+    }
+    
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        background-image: url("https://koldeconcrete.com/images/civil-concrete/cc-2.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    
+    .label {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+        font-weight: bold;
+    }
+    
+    .input {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
+    
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    input[type=submit] {
+        background-color: #e68a00;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+        background-color: #b36b00;
+    }
+    
+    .flex-parent {
+        display: flex;
+    }
+    
+    .jc-center {
+        justify-content: center;
+    }
+    
+    h3 {
+        text-align: center;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .col-25,
+        .col-75,
+        input[type=submit],
+        input[type=reset] {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h2>CONCRETE COMPRESSIVE STRENGTH PREDICTION</h2>
+        </header>
+        <div class="container">
+            <form action="{{ url_for('predict') }}" method="POST">
+
+                <div class="row">
+                    <div class="label">
+                        <label for="cement">Cement</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="cement" name="cement" placeholder="Cement in KG..">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label">
+                        <label for="blast_furnace_slag">Blast Furnace Slag</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="blast_furnace_slag" name="blast_furnace_slag" placeholder="Blast Furnace Slag in KG..">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label">
+                        <label for="fly_ash">Fly Ash</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="fly_ash" name="fly_ash" placeholder="Fly Ash in KG..">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label">
+                        <label for="water">Water</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="water" name="water" placeholder="Water in KG..">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label">
+                        <label for="superplasticizer">Superplasticizer</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="superplasticizer" name="superplasticizer" placeholder="Superplasticizer in KG..">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label">
+                        <label for="coarse_aggregate">Coarse Aggregate</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="coarse_aggregate" name="coarse_aggregate" placeholder="Coarse Aggregate in KG..">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label">
+                        <label for="fine_aggregate">Fine Aggregate</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="fine_aggregate" name="fine_aggregate" placeholder="Fine Aggregate in KG..">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="label">
+                        <label for="age">Age in Days (1~365)</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="age" name="age" placeholder="Enter age in days..">
+                    </div>
+                </div><br>
+
+                <div class="flex-parent jc-center">
+                    <input type="submit" value="Submit" >
+                </div>         
+
+            </form>
+            <br><h3>{{ prediction_text }}<h3>
+        </div>
+        <footer>
+            <p>© 2021 Kartik Hegde</p>
+        </footer>
+</html>
