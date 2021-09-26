@@ -7,3 +7,7 @@ It predicts the Concrete Compressive Strength depending upon raw material
 The main objective of the project is to create a web application which takes some inputs from users and based on the information predicts the premium amount.
 
 A glance of the web application is furnished below:
+
+![gif2](https://user-images.githubusercontent.com/48655681/134815922-111e1e62-2613-4abb-b98c-e352462df312.gif)
+
+<a href="https://ccs-predictions.herokuapp.com/">View Deployment</a>
