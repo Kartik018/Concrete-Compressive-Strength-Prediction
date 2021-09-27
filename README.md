@@ -4,7 +4,7 @@ The quality of concrete is determined by its compressive strength, which is meas
 
 It predicts the Concrete Compressive Strength depending upon raw material
 
-The main objective of the project is to create a web application which takes some inputs from users and based on the information predicts the premium amount.
+The main objective of the project is to create a web application which takes some inputs from users and based on the information predicts the compressive strenght.
 
 A glance of the web application is furnished below:
 
